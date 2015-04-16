@@ -1,0 +1,17 @@
+package parabola;
+
+import javax.swing.JFrame;
+
+public class ParabolaDemo 
+{
+	public static void main(String[] args) 
+	{
+		Parabola parabola= new Parabola("Parabola");
+		parabola.setVisible(true);
+		parabola.setSize(500,500);
+		parabola.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		parabola.setLocationRelativeTo(null);
+		Parabola.GraphPanel graph = new Parabola.GraphPanel();
+		parabola.add(graph);
+	}
+}
