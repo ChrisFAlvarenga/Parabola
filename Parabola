@@ -1,0 +1,32 @@
+package parabola;
+
+import java.awt.Graphics;
+import java.awt.Polygon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Parabola extends JFrame 
+{
+	public Parabola(String graph)
+	{
+		super(graph);
+	}
+	static class GraphPanel extends JPanel
+	{
+		protected void paintComponent(Graphics graph)
+		{
+			graph.drawLine(50,200,350,200);
+			graph.drawString("x",360,200);
+			graph.drawLine(200, 0, 200, 300);
+			graph.drawString("y", 200, 310);
+		
+			Polygon poly = new Polygon();
+			double scaleFactor=0.1;
+			for(int x = -100; x <= 100; x++)
+			{
+				poly.addPoint(x + 200, 200 - (int)(scaleFactor * x * x));
+			}
+			graph.drawPolygon(poly);
+		}
+	}
+}
